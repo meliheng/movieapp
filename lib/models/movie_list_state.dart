@@ -11,12 +11,14 @@ enum PageStatus {
   newPageNoItemsFound,
 }
 
-// extension FetchEnumX on FetchEnum {
-//   bool get isNotStarted => this == FetchEnum.notStarted;
-//   bool get isLoading => this == FetchEnum.loading;
-//   bool get isErrored => this == FetchEnum.errored;
-//   bool get isFetched => this == FetchEnum.fetched;
-// }
+extension PageStatusX on PageStatus {
+  bool get isfirstPageLoading => this == PageStatus.firstPageLoading;
+  bool get isfirstPageLoaded => this == PageStatus.firstPageLoaded;
+  bool get isfirstPageError => this == PageStatus.firstPageError;
+  bool get isNewPageLoading => this == PageStatus.newPageLoading;
+  bool get isNewPageLoaded => this == PageStatus.newPageLoaded;
+  bool get isNewPageError => this == PageStatus.newPageError;
+}
 
 class MovieListState {
   List<Movie> movies;

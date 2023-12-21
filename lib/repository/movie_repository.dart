@@ -1,3 +1,4 @@
+import 'package:movieapp/data/app_exceptions.dart';
 import 'package:movieapp/data/network/network_api_services.dart';
 import 'package:movieapp/models/genre.dart';
 import 'package:movieapp/models/movie_response.dart';
@@ -9,11 +10,14 @@ final movieServiceProvider = Provider((ref) => MovieRepository());
 class MovieRepository {
   final NetworkApiServices networkApiServices = NetworkApiServices();
 
-  Future<List<Movie>> getMovie(int pageNumber) async {
-    dynamic response = await networkApiServices.getGetApiResponse(
-      AppUrl.moviesUrl(pageNumber),
-    );
-    return response = MovieResponse.fromJson(response).movies;
+  Future getMovie(int pageNumber) async {
+    if (pageNumber >= 1 && pageNumber <= 500) {
+      dynamic response = await networkApiServices.getGetApiResponse(
+        AppUrl.moviesUrl(pageNumber),
+      );
+      return response = MovieResponse.fromJson(response).movies;
+    }
+    throw BadRequestException();
   }
 
   Future<List<Movie>> getMovieByQuery(String query) async {
