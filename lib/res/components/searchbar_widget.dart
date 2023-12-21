@@ -34,10 +34,8 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
               decoration: TextDecoration.none,
             ),
             decoration: InputDecoration(
-              contentPadding: const EdgeInsets.only(top: 0),
               prefixIcon: const Icon(
                 Icons.search,
-                color: AppColors.whiteColor,
               ),
               suffixIcon: GestureDetector(
                 onTap: () {
@@ -50,20 +48,8 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
                 },
                 child: const Icon(
                   Icons.close_sharp,
-                  color: AppColors.whiteColor,
                 ),
               ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                borderSide: const BorderSide(
-                  color: Colors.white,
-                ),
-              ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-              fillColor: AppColors.greyColor,
-              filled: true,
             ),
           ),
         );

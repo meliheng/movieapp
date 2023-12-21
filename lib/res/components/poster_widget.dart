@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 
 class PosterWidget extends StatelessWidget {
-  final double height;
-  final double width;
   final String posterPath;
   const PosterWidget({
     super.key,
-    required this.height,
-    required this.width,
     required this.posterPath,
   });
 
@@ -20,17 +16,5 @@ class PosterWidget extends StatelessWidget {
         "$url$posterPath",
       ),
     );
-    // return Container(
-    //   width: width,
-    //   decoration: BoxDecoration(
-    //     color: Colors.red,
-    //     borderRadius: BorderRadius.circular(30),
-    //     image: DecorationImage(
-    //       filterQuality: FilterQuality.low,
-    //       fit: BoxFit.contain,
-    //       image: NetworkImage("$url$posterPath"),
-    //     ),
-    //   ),
-    // );
   }
 }

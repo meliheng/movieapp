@@ -9,7 +9,7 @@ final movieServiceProvider = Provider((ref) => MovieRepository());
 
 class MovieRepository {
   final NetworkApiServices networkApiServices = NetworkApiServices();
-
+  // Get All Movies By Page Number
   Future getMovie(int pageNumber) async {
     if (pageNumber >= 1 && pageNumber <= 500) {
       dynamic response = await networkApiServices.getGetApiResponse(
@@ -20,12 +20,14 @@ class MovieRepository {
     throw BadRequestException();
   }
 
+  // For Search Query
   Future<List<Movie>> getMovieByQuery(String query) async {
     dynamic response =
         await networkApiServices.getGetApiResponse(AppUrl.searchUrl(query));
     return response = MovieResponse.fromJson(response).movies;
   }
 
+  // Get All Genres
   Future<List<Genre>> getGenres() async {
     dynamic response =
         await networkApiServices.getGetApiResponse(AppUrl.genresUrl);

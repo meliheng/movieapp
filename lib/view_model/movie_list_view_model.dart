@@ -47,7 +47,7 @@ class MovieListViewModel extends StateNotifier<MovieListState> {
   Future loadMoreMovies(ScrollController scrollController) async {
     if (scrollController.position.pixels >=
             scrollController.position.maxScrollExtent &&
-        state.fetchEnum != PageStatus.newPageLoading) {
+        state.pageStatus != PageStatus.newPageLoading) {
       state = state.copyWith(fetchEnum: PageStatus.newPageLoading);
       try {
         await getMovies();

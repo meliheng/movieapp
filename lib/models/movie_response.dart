@@ -29,17 +29,6 @@ class MovieResponse {
     movieResponse.totalResults = json['total_results'];
     return movieResponse;
   }
-
-  // Map<String, dynamic> toJson() {
-  //   final Map<String, dynamic> data = <String, dynamic>{};
-  //   data['page'] = page;
-  //   if (movies != null) {
-  //     data['results'] = movies!.map((v) => v.toJson()).toList();
-  //   }
-  //   data['total_pages'] = totalPages;
-  //   data['total_results'] = totalResults;
-  //   return data;
-  // }
 }
 
 class Movie {

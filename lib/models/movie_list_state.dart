@@ -1,5 +1,6 @@
 import 'package:movieapp/models/movie_response.dart';
 
+// For Handle Page State For Example Is Loading, Error etc.
 enum PageStatus {
   idle,
   firstPageLoading,
@@ -25,7 +26,7 @@ class MovieListState {
   List<Movie> filteredMovies;
   int page;
   String errorMessage;
-  PageStatus fetchEnum;
+  PageStatus pageStatus;
   String filterText;
 
   MovieListState({
@@ -33,7 +34,7 @@ class MovieListState {
     required this.filteredMovies,
     required this.page,
     required this.errorMessage,
-    required this.fetchEnum,
+    required this.pageStatus,
     required this.filterText,
   });
   factory MovieListState.initial() {
@@ -41,7 +42,7 @@ class MovieListState {
       movies: [],
       page: 1,
       errorMessage: '',
-      fetchEnum: PageStatus.idle,
+      pageStatus: PageStatus.idle,
       filterText: '',
       filteredMovies: [],
     );
@@ -60,7 +61,7 @@ class MovieListState {
       filteredMovies: filteredMovies ?? this.filteredMovies,
       page: page ?? this.page,
       errorMessage: errorMessage ?? this.errorMessage,
-      fetchEnum: fetchEnum ?? this.fetchEnum,
+      pageStatus: fetchEnum ?? this.pageStatus,
       filterText: filterText ?? this.filterText,
     );
   }

@@ -33,6 +33,22 @@ class AppTheme {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
+      inputDecorationTheme: InputDecorationTheme(
+        contentPadding: const EdgeInsets.only(top: 0),
+        prefixIconColor: AppColors.whiteColor,
+        suffixIconColor: AppColors.whiteColor,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        fillColor: AppColors.greyColor,
+        filled: true,
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: const BorderSide(
+            color: Colors.white,
+          ),
+        ),
+      ),
       // elevatedButtonTheme: ElevatedButtonThemeData(
       //   style: ElevatedButton.styleFrom(
       //       primary: AppColors.redColor,

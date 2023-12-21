@@ -1,7 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:movieapp/models/movie_response.dart';
-import 'package:movieapp/res/app_size.dart';
 import 'package:movieapp/res/components/default_poster_widget.dart';
 import 'package:movieapp/res/components/poster_widget.dart';
 
@@ -27,13 +26,8 @@ class MovieItem extends StatelessWidget {
           clipBehavior: Clip.hardEdge,
           children: [
             movie.posterPath == null
-                ? const DefaultPosterWidget(
-                    height: 20,
-                    width: 20,
-                  )
+                ? const DefaultPosterWidget()
                 : PosterWidget(
-                    height: height ?? AppSize.height(context),
-                    width: width ?? AppSize.width(context),
                     posterPath: movie.posterPath!,
                   ),
             _movieVote(),

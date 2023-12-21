@@ -28,7 +28,7 @@ class MovieListView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final response = ref.watch(movieListViewModelProvider);
     createScrollController(ref);
-    switch (response.fetchEnum) {
+    switch (response.pageStatus) {
       case PageStatus.newPageLoaded:
       case PageStatus.firstPageLoaded:
         return _movieGridView(response);
