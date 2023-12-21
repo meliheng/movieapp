@@ -1,16 +1,28 @@
-# movieapp
+# Movieapp
 
-A new Flutter project.
+Flutter study case project. You can search movie, list of all movies and look movie details.
 
-## Getting Started
+## Installation
 
-This project is a starting point for a Flutter application.
+1. Clone the repository:
 
-A few resources to get you started if this is your first Flutter project:
+    `
+git clone https://github.com/meliheng/movieapp.git
+    `
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. Load the dependencies:
+
+    `
+flutter pub get
+    `
+    
+5. Create .env file to project root:
+
+    add your own API KEY.
+
+44. Open an emulator and run the project:
+    
+    `
+    flutter run
+    `
